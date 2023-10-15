@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE pam_mount SYSTEM "pam_mount.conf.xml.dtd">
+<!--
+	See pam_mount.conf(5) for a description.
+-->
+
+<pam_mount>
+
+		<!-- debug should come before everything else,
+		since this file is still processed in a single pass
+		from top-to-bottom -->
+
+    <!-- <debug enable="3" /> -->
+
+		<!-- Volume definitions -->
+
+
+		<!-- pam_mount parameters: General tunables -->
+
+<!--
+<luserconf name=".pam_mount.conf.xml" />
+-->
+<luserconf name=".config/pam_mount.conf.xml" />
+
+<cifsmount>mount -t cifs //%(SERVER)/%(VOLUME) %(MNTPT) --verbose -o %(OPTIONS)"</cifsmount>
+
+<!-- Note that commenting out mntoptions will give you the defaults.
+     You will need to explicitly initialize it with the empty string
+     to reset the defaults to nothing. -->
+<mntoptions allow="nosuid,nodev,loop,encryption,fsck,nonempty,allow_root,allow_other,sec,seal,cruid,multiuser,user,username,domain,vers,noperm" />
+<!--
+<mntoptions deny="suid,dev" />
+<mntoptions allow="*" />
+<mntoptions deny="*" />
+-->
+<mntoptions require="" />
+
+<!-- requires ofl from hxtools to be present -->
+<logout wait="0" hup="no" term="no" kill="no" />
+
+
+		<!-- pam_mount parameters: Volume-related -->
+
+<mkmountpoint enable="1" remove="true" />
+
+
+</pam_mount>

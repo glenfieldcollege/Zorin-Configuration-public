@@ -1,0 +1,34 @@
+<!DOCTYPE pam_mount SYSTEM "pam_mount.conf.xml.dtd">
+
+<pam_mount>
+
+<volume
+	fstype="cifs"
+	server="truenas.some.school.nz"
+	path="PDrives"
+	mountpoint="~/PDrive/"
+	uid="10000-6400000000"
+	options="user=%(USER),username=%(USER),domain=SOME.SCHOOL.NZ,sec=krb5,cruid=%(USERUID),multiuser,vers=3.0"
+/>
+<volume
+        fstype="cifs"
+        server="truenas.some.school.nz"
+        path="FDrives"
+        mountpoint="~/FDrive/"
+	uid="10000-6400000000"
+        options="user=%(USER),username=%(USER),domain=SOME.SCHOOL.NZ,sec=krb5,cruid=%(USERUID),multiuser,vers=3.0"
+/>
+<volume
+        fstype="cifs"
+        server="truenas.some.school.nz"
+        path="TDrive"
+        mountpoint="~/TDrive"
+	uid="10000-6400000000"
+        options="user=%(USER),username=%(USER),domain=SOME.SCHOOL.NZ,sec=krb5,cruid=%(USERUID),multiuser,vers=3.0"
+/>
+
+
+
+
+
+</pam_mount>
