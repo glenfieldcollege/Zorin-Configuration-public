@@ -42,6 +42,8 @@ Enable SSH - SSH will be installed and enabled for remote system maintenance.
 
 GDM Settings - Various GDM settings will be adjusted for student ease of use and to lock down some features.  gconf-editor is also installed for convenience.
 
+Note: Some lines are marked as Ubuntu Specific (22.04 tested), and this script will indeed set up Ubuntu as well; you will need to uncomment lines accordingly.
+
 # Expectations
 
 This is a simple 1-shot script.  The idea is to adjust the files for your environment, saving you much time.
@@ -57,3 +59,5 @@ This is not a perfect script; there will be areas you don't want to use, but in 
 There will probably be mistakes, as the script is broad in terms of features and has not been cut down to the bare essentials.
 
 This script is used in a public school environment.  It works for us and will hopefully work for you.
+
+This has been tested and used with Zorin 16.3, and should work with other versions.
