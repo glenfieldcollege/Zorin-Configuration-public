@@ -12,9 +12,9 @@ The setup script is built to allow the following:
 
 Student Login - Students can log in using their account against an Active Directory.
 
-Let's repeat that: Students using Linux systems can have their SMB shares mounted automatically and dynamically, depending on the user, and in a lab environment.
-
 Student Drives - Student and student shared drives will be automatically mapped for that student; this is the bit 90% of people want but cannot solve.
+
+Let's repeat that: Students using Linux systems can have their SMB shares mounted automatically and dynamically, depending on the user, and in a lab environment.
 
 Wazuh Agent setup - For our convenience, I recommend this to others.  It's easy to comment out.
 
