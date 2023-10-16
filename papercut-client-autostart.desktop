@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/opt/PaperCut-Client/linux/pc-client-linux.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=PaperCut Client
+Comment=PaperCut Client
