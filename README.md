@@ -54,6 +54,10 @@ There are very few examples, if any, of automatic mapping of a student's drives 
 
 Indeed, I didn't find any examples... this script is for those of you looking for a solution.
 
+You are expected to join your Zorin instance to your Active directory during the installation process and have tested this is working.
+
+This script will not join your machine to the Active Directory for you; it is a post-deployment script.
+
 # Not Perfect
 
 This is not a perfect script; there will be areas you don't want to use, but in that case, comment them out.
