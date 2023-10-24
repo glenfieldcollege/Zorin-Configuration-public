@@ -163,9 +163,9 @@ sudo dpkg -i fflinuxprint_1.1.3-4_amd64.deb
 sudo systemctl stop cups
 #sudo nano /etc/cups/cups-browsed.conf
 # change BrowseRemoteprotocols to an empty string, best comment out original and make new line.
-sudo sed -i 's/BrowseRemoteProtocols dnssd cups/BrowseRemoteProtocols none/' /etc/cups/printers.conf
-sudo sed -i 's/# BrowseLocalProtocols none/BrowseLocalProtocols none/' /etc/cups/printers.conf
-sudo sed -i 's/# BrowseProtocols none/BrowseProtocols none/' /etc/cups/printers.conf
+sudo sed -i 's/BrowseRemoteProtocols dnssd cups/BrowseRemoteProtocols none/' /etc/cups/cups-browsed.conf
+sudo sed -i 's/# BrowseLocalProtocols none/BrowseLocalProtocols none/' /etc/cups/cups-browsed.conf
+sudo sed -i 's/# BrowseProtocols none/BrowseProtocols none/' /etc/cups/cups-browsed.conf
 sudo systemctl start cups
 
 # It can be easier to list printers here, so you can work with this list as you are setting the machine up.
