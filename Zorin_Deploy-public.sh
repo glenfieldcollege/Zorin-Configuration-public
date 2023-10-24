@@ -185,6 +185,7 @@ sudo apt -y install ubuntu-restricted-extras
 sudo apt -y install libnss3-tools
 sudo apt -y install veyon-service
 sudo apt -y install veyon-configurator
+sudo apt -y install gnome-tweaks # Enable the right-click button on touchpads, by running tweaks, then Keyboard & mouse -> Mouse Click Emulation -> Area [tick this]
 #sudo apt -y install 
 
 #  Install SSH based tools and enable the SSH server, for remote management purposes - make sure you use keys for logging in.
