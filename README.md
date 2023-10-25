@@ -30,7 +30,7 @@ Make Google Chrome the Default - Google Chrome will be the default browser, savi
 
 Install Google Earth - To save time, install Google Earth for Students as long as the installer is present.
 
-Install PaperCut Client - It will be installed as long as you have the PaperCut client in the directory.
+Install PaperCut Client - If you have the PaperCut client in the directory, it will be installed.
 
 Autostart the PaperCut Client - The PaperCut client will automatically start for students.
 
@@ -67,3 +67,12 @@ There will probably be mistakes, as the script is broad in terms of features and
 This script is used in a public school environment.  It works for us and will hopefully work for you.
 
 This has been tested and used with Zorin 16.3, and should work with other versions.
+
+# Areas to Edit
+krb5.conf : You'll want to adjust all lines containing "some.school.nz" to your AD server entries.
+Open_Papercut_Client.sh : The Zorin_Deploy.sh script copies the PaperCut client to opt; if you have it somewhere else, you need to adjust /opt/PaperCut-Client/linux/pc-client-linux.sh in this file to the actual location.
+pam_mount.conf.xml.home.skel : This contains example entries; all server, mount point and path entries must be changed for your environment.  The UID might need changing if you have student IDs below 5 digits
+user-dirs.defaults : I have example P T and F drives in here; you'll want to adjust those to what you set in pam_mount.conf.xml.home.skel , or something which fits your environment.
+Zorin_Deploy-public.sh : All XXX.XXX.XXX.XXX entries need to be adjusted for your real IP addresses.  All lines containing some.school.nz need to be adjusted to reflect your environment.
+
+As long as you have your settings right, and the required packages, it should go line by line, performing the desired actions.  On a demo machine, you can also do this by hand, line by line, to see if the desired outcome is achieved.
