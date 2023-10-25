@@ -70,9 +70,13 @@ This has been tested and used with Zorin 16.3, and should work with other versio
 
 # Areas to Edit
 krb5.conf : You'll want to adjust all lines containing "some.school.nz" to your AD server entries.
+
 Open_Papercut_Client.sh : The Zorin_Deploy.sh script copies the PaperCut client to opt; if you have it somewhere else, you need to adjust /opt/PaperCut-Client/linux/pc-client-linux.sh in this file to the actual location.
-pam_mount.conf.xml.home.skel : This contains example entries; all server, mount point and path entries must be changed for your environment.  The UID might need changing if you have student IDs below 5 digits
+
+pam_mount.conf.xml.home.skel : This contains example entries; all server, mount point and path entries must be changed for your environment.  The UID might need changing if you have student IDs below 5 digits.
+
 user-dirs.defaults : I have example P T and F drives in here; you'll want to adjust those to what you set in pam_mount.conf.xml.home.skel , or something which fits your environment.
+
 Zorin_Deploy-public.sh : All XXX.XXX.XXX.XXX entries need to be adjusted for your real IP addresses.  All lines containing some.school.nz need to be adjusted to reflect your environment.
 
 As long as you have your settings right, and the required packages, it should go line by line, performing the desired actions.  On a demo machine, you can also do this by hand, line by line, to see if the desired outcome is achieved.
