@@ -193,11 +193,24 @@ sudo apt -y install openssh-server
 sudo systemctl enable ssh
 sudo systemctl start ssh
 
-# Adjust apt unattended updates to actually provide updates.
+# Adjust apt unattended updates actually to provide updates.
 # Remember to edit: /etc/apt/apt.conf.d/50unattended-upgrades
 
-# Ensure that pam_mount in /etc/pam.d/session-auth has the try_first_password setting.
+# Note: OLD: Ensure that pam_mount in /etc/pam.d/session-auth has the try_first_password setting.
 
+## LAPTOP SPECIFIC
+
+# Hint: Allow a user to change network settings in the network manager; for wifi at home.  Manually edit crontab.
+# sudo crontab -e
+# @reboot sed -i '/System policy prevents modification of network settings for all users/,/allow_active/s/allow_active>auth_admin_keep/allow_active>yes/' /usr/share/polkit-1/actions/org.freedesktop.NetworkManager.policy
+
+## END LAPTOP SPECIFIC
+
+# Hint: You might want to add routes during boot time dynamically.  eth0 is an example; your network interface name might be different.  Manual crontab edit.
+# sudo crontab -e
+# @reboot sudo ip route add XXX.XXX.XXX.XXX/XX via XXX.XXX.XXX.XXX dev eth0
+
+# Update everything.
 #sudo apt ref
 #sudo apt dist-upgrade --download-only
 #sudo apt dist-upgrade
