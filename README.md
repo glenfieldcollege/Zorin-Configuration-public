@@ -42,6 +42,8 @@ Install Quality of Life Applications - Including Veyon.  This is mainly an examp
 
 Enable SSH - SSH will be installed and enabled for remote system maintenance.
 
+Hints - There are hint sections to give an idea of the settings you might want to apply for a given scenario.
+
 GDM Settings - Various GDM settings will be adjusted for student ease of use and to lock down some features.  gconf-editor is also installed for convenience.
 
 Note: Some lines are marked as Ubuntu Specific (22.04 tested), and this script will indeed set up Ubuntu as well; you will need to uncomment lines accordingly.
