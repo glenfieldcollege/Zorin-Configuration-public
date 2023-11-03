@@ -1,4 +1,4 @@
 #!/bin/bash
-apt update
-apt dist-upgrade --download-only # Safety feature.
-apt dist-upgrade
+sudo apt update
+sudo apt dist-upgrade --download-only # Safety feature.
+sudo apt dist-upgrade
