@@ -218,6 +218,11 @@ sudo systemctl start ssh
 #sudo apt dist-upgrade --download-only
 #sudo apt dist-upgrade
 
+# Students have a habit of messing around with the Grub boot menu, and there is a bug in OS prober, which ignores the 0 seconds timeout in grub.cfg.
+# Only set this if you are using Zorin OS only.
+#sudo sed -i 's/set timeout=10/set timeout=0/' /etc/grub.d/30_os-prober
+#sudo update-grub
+
 # Zorin specific configuration changes.
 
 # Make sure everything is tested, and the system is rebooted and tested, before installing the login manager to make changes.
