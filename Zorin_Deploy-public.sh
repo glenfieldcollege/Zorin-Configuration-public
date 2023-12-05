@@ -209,6 +209,13 @@ sudo systemctl start ssh
 
 ## END LAPTOP SPECIFIC
 
+## TEACHER COMPUTER SPECIFIC
+
+# Hint: On a teacher's machine, you probably want to install Veyon Master if you use Veyon on your network.
+# sudo apt -y install veyon-master
+
+## END TEACHER COMPUTER SPECIFIC
+
 # Hint: You might want to add routes during boot time dynamically.  eth0 is an example; your network interface name might be different.  Manual crontab edit.
 # sudo crontab -e
 # @reboot sudo ip route add XXX.XXX.XXX.XXX/XX via XXX.XXX.XXX.XXX dev eth0
