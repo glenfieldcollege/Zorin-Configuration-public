@@ -152,6 +152,9 @@ sudo dpkg -i fflinuxprint_1.1.3-4_amd64.deb
 
 # Configure the printer
 # Do this manually for the moment.
+# Example printers using lpadmin
+#sudo lpadmin -p FollowMe -E -v smb://printing.some.school.nz/FollowMe -L "//printing.some.school.nz" -P /usr/share/ppd/fujifilm/fflinuxprint.ppd -o auth-info-required=username,password
+#sudo lpadmin -p R43-Printer -E -v socket://XXX.XXX.XXX.XXX:9100 -L "Room 43 Printer" -m postscript-hp:0/ppd/hplip/HP/hp-laserjet_e60055-e60075-ps.ppd
 
 #Adjust Followme printer settings to force authentication - Do manually for now.
 #sudo systemctl stop cups
@@ -190,6 +193,10 @@ sudo apt -y install kdeedu # The KDE education applications metapackage.
 sudo apt -y install colobot # Educational programming game.
 sudo apt -y install games-education # Debians educational games collection.
 #sudo apt -y install 
+
+# Firefox ESR requires special handling, should you require it.
+#sudo add-apt-repository -y ppa:mozillateam/ppa
+#sudo apt -y install firefox-esr
 
 #  Install SSH based tools and enable the SSH server, for remote management purposes - make sure you use keys for logging in.
 sudo apt -y install openssh-server
