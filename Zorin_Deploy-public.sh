@@ -227,10 +227,20 @@ sudo systemctl start ssh
 # sudo crontab -e
 # @reboot sudo ip route add XXX.XXX.XXX.XXX/XX via XXX.XXX.XXX.XXX dev eth0
 
+## Updates specific
+
 # Update everything.
 #sudo apt ref
 #sudo apt dist-upgrade --download-only
 #sudo apt dist-upgrade
+
+# Uattended updates work well, but sometimes you have something special, like packages in extra repositories, and you just want it to work
+# So, here are some hints for crontab (sudo crontab -e) for two packages with extra niceties.  You could always remove --download-only, and have everything update, but that's fairly dangerous.
+# Always install Chrome every 3 hours, thus capturing updated versions.  Also, preemptively download all updates, but don't install them.
+#0 */3 * * * apt update && apt -y install google-chrome-stable && apt -y dist-upgrade --download-only # Chrome version.
+#0 */3 * * * apt update && apt -y install firefox-esr && apt -y dist-upgrade --download-only # Firefox ESR version.
+
+## End updates specific
 
 # Students have a habit of messing around with the Grub boot menu, and there is a bug in OS prober, which ignores the 0 seconds timeout in grub.cfg.
 # Only set this if you are using Zorin OS only.
