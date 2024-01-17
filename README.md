@@ -82,3 +82,16 @@ user-dirs.defaults : I have example P T and F drives in here; you'll want to adj
 Zorin_Deploy-public.sh : All XXX.XXX.XXX.XXX entries need to be adjusted for your real IP addresses.  All lines containing some.school.nz need to be adjusted to reflect your environment.
 
 As long as you have your settings right, and the required packages, it should go line by line, performing the desired actions.  On a demo machine, you can also do this by hand, line by line, to see if the desired outcome is achieved.
+
+# Fixes
+After finding a bug and checking on Veyon versions, I found Veyon was now available as a single metapackage; and as a more recent version.
+
+This fixes the student login and out bug, which prevents the Veyon server and worker processes from running and, thus, the Veyon master program from seeing and controlling the student's desktop.
+
+If you used a prior version of the script on a client machine, you can remove the old packages and install the new metapackage on a previously deployed client by performing:
+
+sudo apt remove veyon-service veyon-plugins
+
+Then install the new version with:
+
+sudo apt install veyon
