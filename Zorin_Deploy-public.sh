@@ -250,7 +250,7 @@ sudo systemctl start ssh
 
 # Make sure everything is tested, and the system is rebooted and tested, before installing the login manager to make changes.
 
-#ALT - Working:
+# Zorin 16.3 Specific:
 xhost SI:localuser:gdm
 sudo -u gdm gsettings set org.gnome.login-screen disable-user-list true
 sudo -u gdm gsettings set org.gnome.login-screen banner-message-text 'Login Using your EMail Account'
@@ -260,7 +260,7 @@ sudo -u gdm gsettings set org.gnome.desktop.lockdown disable-user-switching true
 sudo -u gdm gsettings set org.gnome.desktop.screensaver lock-enabled false
 sudo -u gdm gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
 
-# Ubuntu specific:
+# Ubuntu and Zorin 17 specific:
 # sudo mkdir /etc/dconf/profile/
 # sudo echo "user-db:user" | sudo tee --append /etc/dconf/profile/gdm
 # sudo echo "system-db:gdm" | sudo tee --append /etc/dconf/profile/gdm
