@@ -52,26 +52,26 @@ echo XXX.XXX.XXX.XXX   dom2 dom2.some.school.nz | sudo tee --append /etc/hosts
 echo XXX.XXX.XXX.XXX   dom3 dom3.some.school.nz | sudo tee --append /etc/hosts
 echo XXX.XXX.XXX.XXX   student student.some.school.nz | sudo tee --append /etc/hosts
 
+# Copy in our working Kerberos configuration - Make sure you have configured this for your environment.
+
+sudo cp krb5.conf /etc/krb5.conf
+sudo chmod 0644 /etc/krb5.conf
+sudo chown root:root /etc/krb5.conf
+
 #  Now we prepare the system for the KRB5 join.
 sudo apt -y install libpam-mount
 sudo apt -y install libpam-krb5
 sudo apt -y install krb5-user
-sudo apt install cifs-utils # -y for ubuntu
+sudo apt -y install cifs-utils
 sudo apt install hxtools
 sudo apt install keyutils
-sudo apt install mlocate # -y for ubuntu
+sudo apt -y install mlocate
 sudo apt install python3-smbc
 sudo apt install libpam-ccreds
 sudo apt -y install smbclient
 
 sudo pam-auth-update --enable libpam-mount
 sudo pam-auth-update --enable libpam-krb5
-
-# Copy in our working Kerberos configuration.
-
-sudo cp krb5.conf /etc/krb5.conf
-sudo chmod 0644 /etc/krb5.conf
-sudo chown root:root /etc/krb5.conf
 
 # We need to make sure we have identified our auth provider
 echo "auth_provider = ad" | sudo tee --append /etc/sssd/sssd.conf
