@@ -80,6 +80,8 @@ pam_mount.conf.xml.home.skel : This contains example entries; all server, mount 
 user-dirs.defaults : I have example P T and F drives in here; you'll want to adjust those to what you set in pam_mount.conf.xml.home.skel , or something which fits your environment.
 
 Zorin_Deploy-public.sh : All XXX.XXX.XXX.XXX entries need to be adjusted for your real IP addresses.  All lines containing some.school.nz need to be adjusted to reflect your environment.
+Furthermore, It does depend on the Zorin version.  If it is 16.3, you only need to make the above mentioned changes.  However, version 17 has adjustments to the GDM related settings.
+So, in Zorin 17, for all the executable lines of the section called "#Zorin 16.3 Specific:", comment them out.  For all of the executable lines for the section called "# Ubuntu and Zorin 17 specific:" uncomment them.
 
 As long as you have your settings right, and the required packages, it should go line by line, performing the desired actions.  On a demo machine, you can also do this by hand, line by line, to see if the desired outcome is achieved.
 
