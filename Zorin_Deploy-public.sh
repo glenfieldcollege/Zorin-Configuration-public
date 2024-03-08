@@ -246,6 +246,10 @@ sudo systemctl start ssh
 #sudo sed -i 's/set timeout=10/set timeout=0/' /etc/grub.d/30_os-prober
 #sudo update-grub
 
+## Veyon-specific configuration changes for Zorin 17 - uncomment as needed.
+#sudo sed -i 's/# WaylandEnable=false/WaylandEnable=false/' /etc/gdm3/custom.conf  # Veyon does not support wayland, so switch all systems to X11
+# The above change only takes effect on reboot.
+
 # Zorin specific configuration changes.
 
 # Make sure everything is tested, and the system is rebooted and tested, before installing the login manager to make changes.
