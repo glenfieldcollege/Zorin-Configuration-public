@@ -237,7 +237,11 @@ sudo systemctl start ssh
 # So, here are some hints for crontab (sudo crontab -e) for two packages with extra niceties.  You could always remove --download-only, and have everything update, but that's fairly dangerous.
 # Always install Chrome every 3 hours, thus capturing updated versions.  Also, preemptively download all updates, but don't install them.
 #0 */3 * * * apt update && apt -y install google-chrome-stable && apt -y dist-upgrade --download-only # Chrome version.
+#(sudo crontab -l; echo "0 */3 * * * apt update && apt -y install google-chrome-stable && apt -y dist-upgrade --download-only # Chrome version.") | sudo crontab -
+#0 16 * * * apt update && apt -y dist-upgrade # Update everything at 4pm.
+#(sudo crontab -l; echo "0 16 * * * apt update && apt -y dist-upgrade # Update everything at 4pm.") | sudo crontab -
 #0 */3 * * * apt update && apt -y install firefox-esr && apt -y dist-upgrade --download-only # Firefox ESR version.
+#(sudo crontab -l; echo "0 */3 * * * apt update && apt -y install firefox-esr && apt -y dist-upgrade --download-only # Firefox ESR version.") | sudo crontab -
 
 ## End updates specific
 
