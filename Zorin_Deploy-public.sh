@@ -252,6 +252,8 @@ sudo systemctl start ssh
 
 ## Veyon-specific configuration changes for Zorin 17 - uncomment as needed.
 #sudo sed -i 's/# WaylandEnable=false/WaylandEnable=false/' /etc/gdm3/custom.conf  # Veyon does not support wayland, so switch all systems to X11
+#sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/' /etc/gdm3/custom.conf  # Veyon does not support wayland, so switch all systems to X11
+#Note: The wayland # WaylandEnable spacing changes sometimes.
 # The above change only takes effect on reboot.
 
 # Zorin specific configuration changes.
