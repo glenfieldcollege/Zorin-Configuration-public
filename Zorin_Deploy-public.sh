@@ -72,6 +72,7 @@ sudo apt -y install smbclient
 
 sudo pam-auth-update --enable libpam-mount
 sudo pam-auth-update --enable libpam-krb5
+#sudo pam-auth-update --enable mkhomedir # As on Ubuntu 24.04.1
 
 # We need to make sure we have identified our auth provider
 echo "auth_provider = ad" | sudo tee --append /etc/sssd/sssd.conf
