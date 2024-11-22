@@ -193,6 +193,8 @@ sudo apt -y install kdeedu # The KDE education applications metapackage.
 sudo apt -y install colobot # Educational programming game.
 sudo apt -y install games-education # Debians educational games collection.
 sudo apt -y install labplot # Excellent Data Analysis and Visualization Tool
+sudo apt -y install kdenlive # For Video editing.
+sudo apt -y install freecad # For CAD Design.
 #sudo apt -y install 
 
 # Firefox ESR requires special handling, should you require it.
