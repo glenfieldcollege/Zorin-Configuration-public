@@ -113,6 +113,9 @@ sudo cp Install_CA_Certificates.sh /etc/skel/.config/Install_CA_Certificates.sh
 sudo chmod 0644 /etc/skel/.config/Install_CA_Certificates.sh
 sudo chown root:root /etc/skel/.config/Install_CA_Certificates.sh
 
+# Optionally, retrieve the latest copy of Google Chrome; assuming networking is functional at this stage.
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
 # Install Google Chrome - Make sure this package is present in the script directory.
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
