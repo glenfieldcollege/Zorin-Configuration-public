@@ -63,9 +63,10 @@ sudo apt -y install libpam-mount
 sudo apt -y install libpam-krb5
 sudo apt -y install krb5-user
 sudo apt -y install cifs-utils
-sudo apt install hxtools
-sudo apt install keyutils
+sudo apt -y install hxtools
+sudo apt -y install keyutils
 sudo apt -y install mlocate
+sudo apt -y install plocate
 sudo apt install python3-smbc
 sudo apt install libpam-ccreds
 sudo apt -y install smbclient
