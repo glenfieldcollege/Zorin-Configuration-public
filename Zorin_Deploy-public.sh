@@ -79,6 +79,9 @@ sudo pam-auth-update --enable libpam-krb5
 echo "auth_provider = ad" | sudo tee --append /etc/sssd/sssd.conf
 # Ensure we have permissive GPO access control - otherwise logins will fail randomly.
 echo "ad_gpo_access_control = permissive" | sudo tee --append /etc/sssd/sssd.conf
+# Ensure kerberos tickets are correctly processed in newer tools for user drive mounts on login
+# Comment out this line if testing shows otherwise for your use-case.
+sudo sed -i 's/cifs.upcall %k/cifs.upcall -t %k/' /etc/request-key.d/cifs.spnego.conf
 
 #  Copy in our working pam mount security file with adjustments.
 # sudo mkdir /etc/skel/.config # For Ubuntu
