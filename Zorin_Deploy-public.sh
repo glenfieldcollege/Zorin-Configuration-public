@@ -252,34 +252,38 @@ sudo systemctl start ssh
 
 # Make sure everything is tested, and the system is rebooted and tested, before installing the login manager to make changes.
 
-# Zorin 16.3 Specific:
-xhost SI:localuser:gdm
-sudo -u gdm gsettings set org.gnome.login-screen disable-user-list true
-sudo -u gdm gsettings set org.gnome.login-screen banner-message-text 'Login Using your EMail Account'
-sudo -u gdm gsettings set org.gnome.login-screen banner-message-enable true
-sudo -u gdm gsettings set org.gnome.desktop.lockdown disable-lock-screen true
-sudo -u gdm gsettings set org.gnome.desktop.lockdown disable-user-switching true
-sudo -u gdm gsettings set org.gnome.desktop.screensaver lock-enabled false
-sudo -u gdm gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
+#Zorin 16.3 Specific:
+#xhost SI:localuser:gdm
+#sudo -u gdm gsettings set org.gnome.login-screen disable-user-list true
+#sudo -u gdm gsettings set org.gnome.login-screen banner-message-text 'Login Using your EMail Account'
+#sudo -u gdm gsettings set org.gnome.login-screen banner-message-enable true
+#sudo -u gdm gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+#sudo -u gdm gsettings set org.gnome.desktop.lockdown disable-user-switching true
+#sudo -u gdm gsettings set org.gnome.desktop.screensaver lock-enabled false
+#sudo -u gdm gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
 
-# Ubuntu and Zorin 17 specific:
-# sudo mkdir /etc/dconf/profile/
-# sudo echo "user-db:user" | sudo tee --append /etc/dconf/profile/gdm
-# sudo echo "system-db:gdm" | sudo tee --append /etc/dconf/profile/gdm
-# sudo echo "file-db:/usr/share/gdm/greeter-dconf-defaults" | sudo tee --append /etc/dconf/profile/gdm
-# sudo mkdir /etc/dconf/db/gdm.d
-# sudo echo "[org/gnome/login-screen]" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "# Do not show the user list" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "disable-user-list=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "banner-message-text='Login Using Your EMail Account'" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "banner-message-enable=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "[org/gnome/desktop/lockdown]" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "disable-lock-screen=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "disable-user-switching=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "[org/gnome/desktop/screensaver]" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "lock-enabled=false" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo echo "ubuntu-lock-on-suspend=false" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
-# sudo dconf update
+# Ubuntu and Zorin 17/18 specific:
+sudo mkdir /etc/dconf/profile/
+sudo echo "user-db:user" | sudo tee --append /etc/dconf/profile/gdm
+sudo echo "system-db:gdm" | sudo tee --append /etc/dconf/profile/gdm
+sudo echo "file-db:/usr/share/gdm/greeter-dconf-defaults" | sudo tee --append /etc/dconf/profile/gdm
+sudo mkdir /etc/dconf/db/gdm.d
+sudo echo "[org/gnome/login-screen]" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "# Do not show the user list" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "disable-user-list=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "banner-message-text='Login Using Your EMail Account'" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "banner-message-enable=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "[org/gnome/desktop/lockdown]" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "disable-lock-screen=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "disable-user-switching=true" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "[org/gnome/desktop/screensaver]" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "lock-enabled=false" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo echo "ubuntu-lock-on-suspend=false" | sudo tee --append /etc/dconf/db/gdm.d/00-login-screen
+sudo dconf update
+
+# Gnome 50 - future entry
+# Enable Logoff button again.
+#gsettings set org.gnome.shell always-show-log-out true
 
 #ALT - Best method for reconfiguring the login screen:
 sudo apt install dconf-editor
